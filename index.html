@@ -1,12 +1,89 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>form validation/ajax exercise in jquery</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="js/reto.js"></script>
+  <link rel="stylesheet" href="reto.css">
+
 </head>
+
 <body>
-    <h1>Hola mundo!!!</h1>
+  <form action="procesarFormulario.php" method="post" id="formulario">
+  <div>
+    <h2>Knowing My Colleagues In Codespace</h2>
+  </div>
+  <div>
+    <label for="name">Nombre:</label>
+    <input type="text" id="name" name="user_name">
+  </div>
+  <div>
+    <label for="mail">E-mail:</label>
+    <input type="email" id="mail" name="user_mail">
+  </div>
+
+    <div>
+      <label for="animals">Elige un animal</label>
+      <select name="animals" id="species">
+  <option value="ballena">Ballena</option>
+  <option value="elefante">Elefante</option>
+  <option value="condor">Condor</option>
+  <option value="delfin">Delfin</option>
+  <option value="lobo">Lobo</option>
+  <option value="buho">Buho</option>
+  <option value="abeja">Abeja</option>
+</select>
+    </div>
+    <div class="radio">
+      <label for="cantidad">¿Mascotas qué has tenido?:</label>
+      <input type="radio" name="cantidad" value="1" checked>1
+  <input type="radio" name="cantidad" value="2">2
+  <input type="radio" name="cantidad" value="3">3
+  <input type="radio" name="cantidad" value="4">4
+  <input type="radio" name="cantidad" value="5">5
+  <input type="radio" name="cantidad" value="6">6
+  <input type="radio" name="cantidad" value="7">7
+  <input type="radio" name="cantidad" value="8">8
+
+    </div>
+
+  <div>
+      <label for="pr1">1. ¿Qué canción serviría para resumir tu personalidad? ¿Por qué?</label>
+      <textarea id="pr1" name="user_pr1"></textarea>
+  </div>
+
+  <div>
+      <label for="pr2">¿A qué personaje histórico te gustaría entrevistar?</label>
+      <textarea id="pr2" name="user_pregunta2"></textarea>
+  </div>
+
+
+  <div>
+      <label for="pr3"> ¿Qué es para ti la libertad?</label>
+      <textarea id="pr3" name="user_pregunta3"></textarea>
+  </div>
+
+  <div>
+      <label for="pr4">¿Qué superpoder tendrías?</label>
+      <textarea id="pr4" name="user_pregunta4"></textarea>
+  </div>
+
+  <div>
+    <label for="pr5">Dejame un mensage:</label>
+    <textarea id="pr5" name="user_pregunta5"></textarea>
+  </div> 
+
+    <div><input type="submit" value="Submit"></div>
+    <div><input type="reset"></div>
+</form>
+  <button id="fetch">Buscar respuestas</button>
+  <div id="responsesContainer">
+
+  </div>
+  
+
 </body>
 </html>
