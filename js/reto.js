@@ -68,19 +68,29 @@ $fetch.click(function() {
             });
         },
 
-        /*const fiatUsers = Object.values(data).filter(function(response) {
-            return response.animals.animals == 'fiat';
-        });
 
-        
-        if (fiatUsers.length > 0) {
-            $('#fiatUsers').append('<h1>Este es tu animal de elección: </h1>')
-                fiatUsers.map(function(user) {
-                $('#fiatUsers')
-                .append(`<h3>${user.name}</h3>`)
-                .append(`<li>Cantidad: ${user.animals.animals}<h2>`);
-              });*/
-
+                .append('<h1>Calcular mascota promedio</h1>');
+                //ponemos en el html que teniamos un div vacio un titulo para que nos diga lo que queremos hacer
+                var total = 0;
+                //inicializamos una variable contador
+                const respuestas = Object.values(data);
+                //a la variable respuesta le metemos el array que hemos obtenido con la información
+                respuestas.forEach(function(element) {
+                    //para cada posición del array
+                    total = total + parseInt(element.edad);
+                    //le añadimos al contador el valor de la posición
+                });
+         
+                const promedioMascotas = total/respuestas.length;
+                //en promedioEdad tenemos el resultado de dividir el valor del contador entre
+                //la longitud que tenga el array
+         
+                $('#responsesContainer').append(`<h2>${promedioMascotas} años</h2>`);
+                //imprimimos en el sitio vacio del html el resultado de la operacion de calcular
+                //la edad promedio
+            }
+         });
+ 
 
         error: function(error) {
         console.log(error);
